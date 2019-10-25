@@ -1,19 +1,18 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
+import React from '../../node_modules/react'
+import {NavLink} from '../../node_modules/react-router-dom'
 
-export default function NavBar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/home">Navbar</a>
-            <div>
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active"><NavLink className="nav-link" to="/home">Home</NavLink></li>
-                    <li className="nav-item active"><NavLink className="nav-link" to="#">Employee</NavLink></li>
-                    <li className="nav-item active"><NavLink className="nav-link" to="#">Country</NavLink></li>
-                    <li className="nav-item active"><NavLink className="nav-link" to="#">Company</NavLink ></li>
-                </ul>
-            </div>
-            
-        </nav>
-    )
-}
+const NavBar = () => (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="/">Contact book</a>
+    <div>
+        <ul className="navbar-nav mr-auto">
+            <li className="nav-item active"><NavLink className="nav-link" activeClassName="activate" to="/">Home</NavLink></li>
+            <li className="nav-item active"><NavLink className="nav-link" to="employee">Employee</NavLink></li>
+            <li className="nav-item active"><NavLink className="nav-link" to="country">Country</NavLink></li>
+            <li className="nav-item active"><NavLink className="nav-link" to="company">Company</NavLink ></li>
+        </ul>
+    </div>
+</nav>
+)
+       
+export default NavBar;
