@@ -1,7 +1,7 @@
 import React from '../../node_modules/react'
 //import { Link } from '../../node_modules/react-router-dom'
 
-const Home = () => 
+export const Home = () => 
    (
     <div className="container">
       <h1>Home Page</h1>
@@ -9,6 +9,4 @@ const Home = () =>
         Omg its the home page of your project for Group 3.. er I mean Group 4!
       </p>
     </div>
-  )
-
-  export default Home;
+  );

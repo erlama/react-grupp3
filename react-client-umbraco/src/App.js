@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Pages/Home';
-import Employee from './Pages/Empoyee';
-import Country from './Pages/Country';
-import Company from './Pages/Company'
+import {Home} from './Pages/Home';
+import {Employee} from './Pages/Empoyee';
+import {Country} from './Pages/Country';
+import {Company} from './Pages/Company';
 //import Navbar from './Components/NavBar';
 
-export default function App() {
-  return (
+class App extends Component {
+  render() {
+     return (
       <Switch>
         {/* <Navbar/> */}
         <Route exact path="/" component={Home} />
@@ -16,4 +17,8 @@ export default function App() {
         <Route path="/company" component={Company} />
       </Switch>
   )
+  }
+ 
 }
+
+export default App;
