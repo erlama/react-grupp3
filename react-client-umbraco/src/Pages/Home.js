@@ -4,9 +4,7 @@ import React from '../../node_modules/react'
 export const Home = () => 
    (
     <div className="container">
-      <h1>Home Page</h1>
-      <p>
-        Omg its the home page of your project for Group 3.. er I mean Group 4!
-      </p>
+      <h4>Welcome to our awesome page!</h4>
+      <h6>If you want to search for someone/something, chooes one of the buttons in the menu bar! </h6>
     </div>
   );

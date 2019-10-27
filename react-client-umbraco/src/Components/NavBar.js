@@ -1,6 +1,6 @@
 import React from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -17,33 +17,22 @@ const Styles = styled.div`
     }
 `;
 
+
+    let style = {
+        padding: '10px'
+    }
+
+
 export const NavBar = () => (
     <Styles>
         <Navbar expand="lg">
-            {/* <Nav.Link><NavLink to="/">Contakt book</NavLink></Nav.Link> */}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Item>
-                        <Nav.Link>
-                            <NavLink to="/">Home</NavLink>
-                        </Nav.Link>
-                    </Nav.Item>        
-                    <Nav.Item>
-                        <Nav.Link>
-                            <NavLink to="/employee">Employee</NavLink>
-                        </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link>
-                            <NavLink to="/country">Country</NavLink>
-                        </Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link>
-                            <NavLink to="/company">Company</NavLink>
-                        </Nav.Link>
-                    </Nav.Item>
+                    <Link style={style} to="/">Home</Link>
+                    <Link style={style} to="/employee">Employee</Link>
+                    <Link style={style} to="/country">Country</Link>
+                    <Link style={style} to="/company">Company</Link>      
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

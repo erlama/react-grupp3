@@ -3,7 +3,7 @@ import React from 'react'
 export const Company = () => 
    (
     <div className="container">
-      <h1>Company page</h1>
+      <h4>Companys</h4>
     </div>
   );
 
