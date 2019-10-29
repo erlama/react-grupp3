@@ -1,14 +1,31 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Home } from './Pages/Home';
-import { Employee } from './Pages/Employee';
-import { Country } from './Pages/Country';
-import { Department } from './Pages/Department';
-import { NavBar } from './Components/NavBar';
-import { Layout } from './Components/Layout';
-import { Jumbotron } from './Components/Jumbotron';
+import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import { Home } from "./Pages/Home";
+import { Employee } from "./Pages/Employee";
+import { Country } from "./Pages/Country";
+import { Department } from "./Pages/Department";
+import { NavBar } from "./Components/NavBar";
+import { Layout } from "./Components/Layout";
+import { Jumbotron } from "./Components/Jumbotron";
+import { getAccessToken } from "./umbraco-api.js";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      accessToken: ""
+    };
+  }
+
+  componentDidMount() {
+    getAccessToken().then(token => {
+      this.setState({
+        accessToken: token
+      });
+      console.log(this.state.accessToken);
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
