@@ -1,8 +1,9 @@
-export const getDataFromUmbraco = async () => {
+export const getDataFromUmbraco = async id => {
   const accessToken = localStorage.getItem("accessToken");
 
   let rawData = await fetch(
-    "http://localhost:65022/umbraco/rest/v1/content/1089/children",
+    // Notice that this URL gets a list of children
+    "http://localhost:65022/umbraco/rest/v1/content/" + id + "/children",
     {
       method: "get",
       headers: {

@@ -4,9 +4,9 @@ import { getDataFromUmbraco } from "../getDataFromUmbraco";
 var _data;
 export const Employee = () => {
   const [data, setData] = useState({});
-
+  const returnList = [];
   useEffect(() => {
-    var promiseResult = getDataFromUmbraco();
+    var promiseResult = getDataFromUmbraco("1089");
     promiseResult.then(result => {
       _data = result._embedded.content;
       setData({ _data });
@@ -15,12 +15,14 @@ export const Employee = () => {
 
   console.log(data._data);
   if (data._data !== undefined) {
-    data._data.forEach(element => {
+    data._data.map(element => {
       console.log(element.properties.employeeName);
+      returnList.push(
+        <h1 key={element.id}>{element.properties.employeeName}</h1>
+      );
     });
-    return <h1>hello</h1>;
+    return returnList;
   } else {
-    console.log("***");
     return <span>Loading ...</span>;
   }
 };
