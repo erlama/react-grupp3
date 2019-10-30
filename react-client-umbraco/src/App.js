@@ -10,17 +10,9 @@ import { Jumbotron } from "./Components/Jumbotron";
 import { getAccessToken } from "./umbraco-api.js";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      accessToken: ""
-    };
-  }
   componentDidMount() {
     getAccessToken().then(token => {
-      this.setState({
-        accessToken: token
-      });
+      localStorage.setItem("accessToken", token);
     });
   }
 
@@ -32,9 +24,7 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/employee">
-              <Employee token={this.state.accessToken} />
-            </Route>
+            <Route path="/employee" component={Employee} />
             <Route path="/country" component={Country} />
             <Route path="/department" component={Department} />
           </Switch>
