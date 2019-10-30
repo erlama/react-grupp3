@@ -16,13 +16,11 @@ class App extends Component {
       accessToken: ""
     };
   }
-
   componentDidMount() {
     getAccessToken().then(token => {
       this.setState({
         accessToken: token
       });
-      console.log(this.state.accessToken);
     });
   }
 
@@ -34,7 +32,9 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/employee" component={Employee} />
+            <Route path="/employee">
+              <Employee token={this.state.accessToken} />
+            </Route>
             <Route path="/country" component={Country} />
             <Route path="/department" component={Department} />
           </Switch>
