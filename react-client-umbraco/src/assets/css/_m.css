@@ -1,0 +1,24 @@
+input[type="text"].form-control.search-box {
+    border-radius: 100px;
+}
+
+.backdrop, .bottom-section{
+    background-color: #2c3333;
+}
+
+.bottom-section {
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+}
+
+.overlay-text {
+    color: whitesmoke;
+}
+
+.home-container {
+    z-index: -3;
+}
+
+#search-button-home {
+    border-radius: 100px;
+}

@@ -4,16 +4,20 @@ import styled from 'styled-components';
 import image1 from '../assets/image001.jpg';
 
 const Styles = styled.div`
-    .jumbo{
+    .jumbo {
         background: url(${image1}) no-repeat bottom;
         background-size: cover;
         color: #efefef;
         height: 200px;
         position: relative;
-        z-index: -2;
+        z-index: -3;
+        margin-bottom: 0;
+        -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
     }
 
-    .overlay{
+    .overlay {
         background-color: #000;
         opacity: 0.6;
         position: absolute;

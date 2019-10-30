@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import {Home} from './Pages/Home';
-import {Employee} from './Pages/Empoyee';
+import {Employee} from './Pages/Employee';
 import {Country} from './Pages/Country';
 import {Company} from './Pages/Company';
 import {NavBar} from './Components/NavBar';
