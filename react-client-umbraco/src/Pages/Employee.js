@@ -24,7 +24,7 @@ let style = {
 
 export const Employee = token => {
   console.log(token.token);
-
+  var contentData;
   fetch("http://localhost:65022/umbraco/rest/v1/content/1089/children", {
     method: "get",
     headers: {
@@ -37,36 +37,12 @@ export const Employee = token => {
       return response.json();
     })
     .then(data => {
-      //debugger;
-      /*var contentdata = {
-        content: data._embedded.content[0].properties
+      contentData = {
+        content: data._embedded.content
       };
-      console.log(contentdata);*/
+      console.log(contentData);
       console.log(data);
-      //return contentdata;
     });
 
   return <h1>Hello!</h1>;
 };
-
-/*function getContent(token) {
-  console.log(token);
-  console.log("**************");
-  fetch("http://localhost:65022/umbraco/rest/v1/content/", {
-    method: "get",
-    headers: {
-      Authorization: "Bearer " + token,
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    }
-  })
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      debugger;
-      var data = {
-        content: data._embedded.content["0"].properties
-      };
-      return data;
-    });*/
