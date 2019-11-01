@@ -7,15 +7,8 @@ import { Department } from "./Pages/Department";
 import { NavBar } from "./Components/NavBar";
 import { Layout } from "./Components/Layout";
 import { Jumbotron } from "./Components/Jumbotron";
-import { getAccessToken } from "./umbraco-api.js";
 
 class App extends Component {
-  componentDidMount() {
-    getAccessToken().then(token => {
-      localStorage.setItem("accessToken", token);
-    });
-  }
-
   render() {
     return (
       <React.Fragment>

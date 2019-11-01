@@ -21,10 +21,10 @@ export const Department = () => {
 
   console.log(data._data);
   if (data._data !== undefined) {
-    data._data.map(element => {
+    data._data.forEach(element => {
       console.log(element.properties.adress);
 
-      returnList.push(<h6>{element.properties.adress}</h6>);
+      returnList.push(<h6 key={element.id}>{element.properties.adress}</h6>);
     });
 
     return (

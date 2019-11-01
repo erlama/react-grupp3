@@ -21,16 +21,16 @@ export const Country = () => {
 
   console.log(data._data);
   if (data._data !== undefined) {
-    data._data.map(element => {
+    data._data.forEach(element => {
       console.log(element.properties.adress);
-      returnList.push(<h6>{element.properties.landName}</h6>);
+      returnList.push(<h6 key={element.id}>{element.properties.landName}</h6>);
     });
   } else {
     return <span>Loading ...</span>;
   }
   return (
     <div className="container">
-      <h4>Country</h4>
+      <h4>Countries</h4>
       <form className="form-inline my-2 my-lg-0">
         <input
           style={style}

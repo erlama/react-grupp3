@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getDataFromUmbraco } from "../getDataFromUmbraco";
-import { EmployeeDetails } from "./EmployeeDetails";
+import { getDataFromControllers } from "../getDataFromControllers";
 
 let style = {
   width: "500px"
+};
+let tableStyle = {
+  marginTop: "50px"
 };
 
 var _data;
@@ -13,28 +15,24 @@ export const Employee = () => {
 
   const returnList = [];
   useEffect(() => {
-    var promiseResult = getDataFromUmbraco("1089", true);
+    var promiseResult = getDataFromControllers("employees/getallemployees");
     promiseResult.then(result => {
-      _data = result._embedded.content;
+      _data = result;
       setData({ _data });
     });
   }, []);
 
-  console.log(data._data);
   if (data._data !== undefined) {
-    data._data.map(element => {
-      console.log(element.properties.firstName);
-
-      // returnList
-      //   .push
-      //   // <a href="#" key={element.id} onClick={getDetails(element.id)}>
-      //   //   {element.properties.firstName}
-      //   // </a>
-      //   // <EmployeeDetails
-      //   //   key={element.id.toString()}
-      //   //   employeeId={element.id.toString()}
-      //   // />
-      //   ();
+    data._data.forEach(element => {
+      returnList.push(
+        <tr key={element.Id}>
+          <th scope="row">{element.Id}</th>
+          <td>{element.FirstName}</td>
+          <td>{element.LastName}</td>
+          <td>{element.Department}</td>
+          <td>{element.Country}</td>
+        </tr>
+      );
     });
   } else {
     return <span>Loading ...</span>;
@@ -54,19 +52,20 @@ export const Employee = () => {
           Search
         </button>
       </form>
-      <div>{returnList}</div>
+      <div>
+        <table id="EmployeeTable" className="table" style={tableStyle}>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Department</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>{returnList}</tbody>
+        </table>
+      </div>
     </div>
   );
 };
-
-// var _details;
-// const getDetails = employeeId => {
-//   console.log("5555");
-//   var promiseResult = getDataFromUmbraco(employeeId, false);
-//   promiseResult.then(result => {
-//     setTimeout(() => {
-//       _details = result._embedded.content;
-//       console.log(_details);
-//     }, 5000);
-//   });
-// };

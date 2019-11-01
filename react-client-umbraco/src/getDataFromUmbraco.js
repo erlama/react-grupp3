@@ -3,9 +3,10 @@ export const getDataFromUmbraco = async (id, ifChildren) => {
   let fetchUrl;
   if (ifChildren) {
     fetchUrl =
-      "http://localhost:65022/umbraco/rest/v1/content/" + id + "/children";
+      //"http://localhost:65022/umbraco/rest/v1/content/" + id + "/children";
+      " ";
   } else {
-    fetchUrl = "http://localhost:65022/umbraco/rest/v1/content/" + id + "/";
+    fetchUrl = " "; //"http://localhost:65022/umbraco/rest/v1/content/" + id + "/";
   }
   let rawData = await fetch(
     // Notice that this URL gets a list of children
