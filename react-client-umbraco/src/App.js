@@ -7,6 +7,7 @@ import { Department } from "./Pages/Department";
 import { NavBar } from "./Components/NavBar";
 import { Layout } from "./Components/Layout";
 import { Jumbotron } from "./Components/Jumbotron";
+import { EmployeeDetails } from "./Pages/EmployeeDetails";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/employee" component={Employee} />
             <Route path="/country" component={Country} />
             <Route path="/department" component={Department} />
+            <Route path="/employeedetails" component={EmployeeDetails} />
           </Switch>
         </Layout>
       </React.Fragment>

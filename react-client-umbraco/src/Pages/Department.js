@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { getDataFromControllers } from '../getDataFromControllers';
-import { MDBDataTable } from 'mdbreact';
-let style = {
-  width: '500px'
-};
-let tableStyle = {
-  marginTop: '50px'
-};
+import React, { useEffect, useState } from "react";
+import { getDataFromControllers } from "../getDataFromControllers";
+import { MDBDataTable } from "mdbreact";
+
 var _data;
 var tableData;
 
 export const Department = () => {
   const [data, setData] = useState({});
-  const returnList = [];
 
   useEffect(() => {
-    var promiseResult = getDataFromControllers('departments/getAllDepartments');
+    var promiseResult = getDataFromControllers("departments/getAllDepartments");
     promiseResult.then(result => {
       _data = result;
       setData({ _data });
@@ -26,33 +20,33 @@ export const Department = () => {
     tableData = {
       columns: [
         {
-          label: 'Id',
-          field: 'Id',
-          sort: 'asc',
+          label: "Id",
+          field: "Id",
+          sort: "asc",
           width: 150
         },
         {
-          label: 'Department name',
-          field: 'Name',
-          sort: 'asc',
+          label: "Department name",
+          field: "Name",
+          sort: "asc",
           width: 270
         },
         {
-          label: 'Address',
-          field: 'Address',
-          sort: 'asc',
+          label: "Address",
+          field: "Address",
+          sort: "asc",
           width: 200
         },
         {
-          label: 'Phone number',
-          field: 'PhoneNumber',
-          sort: 'asc',
+          label: "Phone number",
+          field: "PhoneNumber",
+          sort: "asc",
           width: 100
         },
         {
-          label: 'Country',
-          field: 'LandName',
-          sort: 'asc',
+          label: "Country",
+          field: "LandName",
+          sort: "asc",
           width: 150
         }
       ],

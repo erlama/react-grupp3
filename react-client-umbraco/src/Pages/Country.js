@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {getDataFromControllers} from '../getDataFromControllers';
+import { getDataFromControllers } from "../getDataFromControllers";
 import { MDBDataTable } from "mdbreact";
 
-let styles = {
-  bacground: 'blue'
-}
 var _data;
 var tableData;
 
@@ -27,7 +24,7 @@ export const Country = () => {
           field: "Name",
           sort: "asc",
           width: 270
-        },
+        }
       ],
       rows: data._data
     };
