@@ -27,7 +27,7 @@ export const Employee = () => {
               params: emp.Id
             }}
           >
-            Click for more info
+            Info
           </Link>
         </span>
       );
@@ -41,16 +41,11 @@ export const Employee = () => {
           width: 150
         },
         {
-          label: "First name",
-          field: "FirstName",
+          label: "Full name",
+          field: "FullName",
           sort: "asc",
-          width: 270
-        },
-        {
-          label: "Last name",
-          field: "LastName",
-          sort: "asc",
-          width: 200
+          width: 270,
+          display: "none"
         },
         {
           label: "Department",
